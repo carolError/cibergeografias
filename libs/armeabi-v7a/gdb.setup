@@ -1,0 +1,6 @@
+set solib-search-path /Users/arturo/Documents/of_v0.8.4_android_release/apps/myApps/cibergeografias//obj/local/armeabi-v7a:/Users/arturo/Documents/of_v0.8.4_android_release/apps/myApps/cibergeografias//libs/armeabi-v7a
+directory /Users/arturo/Documents/android-ndk-r10b/platforms/android-17/arch-arm/usr/include
+directory /Users/arturo/Documents/of_v0.8.4_android_release/apps/myApps/cibergeografias//src
+directory /Users/arturo/Documents/android-ndk-r10b/sources/cxx-stl/system
+directory /Users/arturo/Documents/of_v0.8.4_android_release/apps/myApps/cibergeografias//libs/armeabi-v7a
+

@@ -57,6 +57,17 @@ void testApp::setup(){
 	//thresTex.allocate(pix);
 	//thresTex.loadData(pix);*/
 
+	terrainBG.loadImage("terreno.jpg");
+	terreno.set (1023*5, 985*5, 150, 100, OF_PRIMITIVE_TRIANGLES);
+	vector<ofVec3f> & terrenoVertices = terreno.getMesh().getVertices();
+	for (int i=0, y=0; y< 150; y++){
+		for(int x=0; x<100; x++,i++){
+			//terrenoVertices[i].y += terrenoVertices[i].y + terrainBG.getColor(terrainBG.width/x,terrainBG.height/y).getBrightness()*3;
+			terrenoVertices[i].y = ofNoise(x/10,y/10)*100;
+		}
+	}
+	//terreno.set(600,400,60,40,OF_PRIMITIVE_TRIANGLES);
+
 	//LabelNetescopio::G1.loadImage("01.png");
 	LabelNetescopio::G2.loadImage("02.png");
 	LabelNetescopio::font.loadFont("FreeSans.ttf",18,true,true,true);
@@ -167,7 +178,6 @@ void testApp::draw(){
 		int x = (ofGetWidth()-width)/2.;
 		grabber.draw(x,0,width,ofGetHeight());
 
-
 		//thresTex.loadData(thresPix);
 		//thresTex.draw(0,0,320,240);
 		ofPushView();
@@ -191,10 +201,30 @@ void testApp::draw(){
 			aruco.begin(i);
 
 			if(particles.find(currentId)!=particles.end()){
+				  ofPushMatrix();
+				  ofScale(0.00025,0.000375,0.000375);
+				  ofRotateX(-60);
+				  ofRotateZ(45);
+				  ofTranslate(0,200*10,0);
+				  //ofTranslate(-300*5,0,-200*5);
+				  ofSetColor(90,90,255);
+				  //terreno.draw();
+				  terreno.drawWireframe();
+				  ofPopMatrix();
+
 
 				ofSetColor(ofColor::red);
-				ofLine(ofVec3f(-markerSize/2.,0,0),ofVec3f(-markerSize/2.,10,0));
-				ofLine(ofVec3f(markerSize/2.,0,0),ofVec3f(markerSize/2.,10,0));
+				/*ofLine(ofVec3f(-markerSize/2.,0,0),ofVec3f(-markerSize/2.,10,0));
+				//ofLine(ofVec3f(markerSize/2.,0,0),ofVec3f(markerSize/2.,10,0));*/
+
+				ofLine(ofVec3f(ofRandom(-markerSize*.5),0,0),ofVec3f(ofRandom(markerSize*5),ofRandom(markerSize*5),ofRandom(markerSize*5)));
+				ofLine(ofVec3f(ofRandom(-markerSize*.5),0,0), ofVec3f(ofRandom(markerSize*5),ofRandom(markerSize*5),ofRandom(markerSize*5)));
+				ofLine(ofVec3f(ofRandom(markerSize*.5),0,0),ofVec3f(ofRandom(markerSize*5),ofRandom(markerSize*5),ofRandom(markerSize*5)));
+				ofLine(ofVec3f(ofRandom(markerSize*.5),0,0),ofVec3f(ofRandom(markerSize*5),ofRandom(markerSize*5),ofRandom(markerSize*5)));
+				ofLine(ofVec3f(ofRandom(markerSize*.5),0,0),ofVec3f(ofRandom(markerSize*5),ofRandom(markerSize*5),ofRandom(markerSize*5)));
+
+
+
 				ofSetColor(255);
 				ofScale(-1./ofGetHeight(),-1./ofGetHeight(),1./ofGetHeight());
 				particles[currentId].draw();

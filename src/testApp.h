@@ -64,6 +64,10 @@ class testApp : public ofBaseApp{
 		//Logo logo;
 		ofImage thresImg;
 		ofImage descBg;
+
+		ofImage terrainBG;
+
+		ofPlanePrimitive terreno;
 };
 
 #endif	

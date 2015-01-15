@@ -88,8 +88,16 @@
 		<project id="androidEmptyExample.null.859352690" name="androidEmptyExample"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope" versionNumber="1">
-		<resource resourceType="PROJECT" workspacePath="/cibergeografias"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Desktop">
+			<resource resourceType="PROJECT" workspacePath="/cibergeografias"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/cibergeografias"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/cibergeografias"/>
+		</configuration>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>

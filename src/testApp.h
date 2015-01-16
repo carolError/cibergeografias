@@ -50,7 +50,8 @@ class testApp : public ofBaseApp{
 
 		ofRectangle button;
 		ofRectangle plusV;
-		ofRectangle plusH;
+        ofRectangle plusH;
+    
 		enum State{
 			AR,
 			Description
@@ -64,6 +65,7 @@ class testApp : public ofBaseApp{
 		//Logo logo;
 		ofImage thresImg;
 		ofImage descBg;
+		ofImage logo;
 
 		ofImage terrainBG;
 
